@@ -1,7 +1,5 @@
 FROM linuxserver/baseimage
-
 MAINTAINER smdion <me@seandion.com>
-
 ENV APTLIST="polipo inotify-tools"
 
 # Install Polipo
