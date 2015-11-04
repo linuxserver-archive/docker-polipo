@@ -17,4 +17,4 @@ EXPOSE 8123
 # adding custom files
 ADD services/ /etc/service/
 ADD init/ /etc/my_init.d/
-RUN chmod -v +x /etc/service/*/run /etc/service/*/finish && chmod -v +x /etc/my_init.d/*.sh && \
+RUN chmod -v +x /etc/service/*/run /etc/service/*/finish && chmod -v +x /etc/my_init.d/*.sh
