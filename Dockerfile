@@ -48,7 +48,7 @@ sed -i '23d' /defaults/polipo.conf && \
 sed -i -e 's|# allowedClients = 127.0.0.1, 192.168.42.0/24|allowedClients = 127.0.0.1, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16|' /defaults/polipo.conf && \
 
 #set proxy name
-sed -i -e 's/# proxyName = "polipo.example.org"/proxyName = "unRAID.Polipo"/' /defaults/polipo.conf
+sed -i -e 's/# proxyName = "polipo.example.org"/proxyName = "LSIO.Polipo"/' /defaults/polipo.conf
 
 # volumes and ports
 VOLUME /config
