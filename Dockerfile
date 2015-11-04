@@ -4,8 +4,6 @@ ENV APTLIST="polipo inotify-tools"
 
 # Install Polipo
 RUN \
-  echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty universe multiverse" >> /etc/apt/sources.list && \
-  echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates universe multiverse" >> /etc/apt/sources.list && \
   apt-get update -q && \
   apt-get install $APTLIST -qy && \
 
