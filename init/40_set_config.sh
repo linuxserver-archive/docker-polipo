@@ -6,7 +6,7 @@ if [ -f /config/polipo.conf ]; then
 else
 	echo "Creating config from template."
 	cp /usr/share/doc/polipo/examples/config.sample /config/polipo.conf
-	chown nobody:users /config/polipo.conf
+	chown abc /config/polipo.conf
  
 	#Allow outside access
 	sed -i -e 's/# proxyAddress = "0.0.0.0"/proxyAddress = "0.0.0.0"/' /config/polipo.conf
@@ -45,5 +45,5 @@ fi
 # Verify and create directory
 if [[ ! -e /config/cache ]]; then
 	mkdir -p /config/cache
-	chown nobody:users /config/cache
+	chown abc /config/cache
 fi
