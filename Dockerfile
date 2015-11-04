@@ -3,12 +3,10 @@ MAINTAINER smdion <me@seandion.com>
 ENV APTLIST="polipo inotify-tools"
 
 # Install Polipo
-RUN \
-  apt-get install $APTLIST -qy && \
+RUN apt-get install $APTLIST -qy && \
 
 # clean up 
-apt-get clean -y && \
-rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # volumes and ports
 VOLUME /config
