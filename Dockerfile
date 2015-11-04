@@ -7,8 +7,8 @@ RUN \
   apt-get install $APTLIST -qy && \
 
 # clean up 
-rm -rf rm -rf /app/.*[a-z] && \
-apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+apt-get clean -y && \
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # volumes and ports
 VOLUME /config
