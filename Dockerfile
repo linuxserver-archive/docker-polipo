@@ -53,4 +53,3 @@ sed -i -e 's/# proxyName = "polipo.example.org"/proxyName = "unRAID.Polipo"/' /d
 # volumes and ports
 VOLUME /config
 EXPOSE 8123
-# config settings for polipo
