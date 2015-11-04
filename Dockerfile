@@ -3,7 +3,9 @@ MAINTAINER smdion <me@seandion.com>
 ENV APTLIST="polipo inotify-tools"
 
 # Install Polipo
-RUN apt-get install $APTLIST -qy && \
+RUN \
+  apt-get update -q && \
+  apt-get install $APTLIST -qy && \
 
 # clean up 
 apt-get clean && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
