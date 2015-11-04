@@ -6,4 +6,4 @@
 # Verify and create directory
 [[ ! -e /config/cache ]] && mkdir -p /config/cache
 
-chown abc /config/cache
+chown abc:abc /config/*
