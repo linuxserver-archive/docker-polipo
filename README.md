@@ -42,4 +42,4 @@ Basic settings are pre-set by this container.  You can use the out of box experi
 
 ## Versions
 
-+ **dd.MM.yyyy:** This is the standard Version type now. 
++ **06.11.2015:** This is the standard Version type now. 
