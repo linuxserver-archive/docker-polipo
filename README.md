@@ -9,7 +9,13 @@ Polipo is a lightweight caching and forwarding web proxy server. It has a wide v
 ## Usage
 
 ```
-docker create --name=polipo -v /etc/localtime:/etc/localtime:ro -v <path to data>:/config -e PGID=<gid> -e PUID=<uid>  -p 8123:8123 linuxserver/polipo
+docker create \
+--name=polipo \
+-v /etc/localtime:/etc/localtime:ro \
+-v <path to data>:/config \
+-e PGID=<gid> -e PUID=<uid> \
+-p 8123:8123 \
+linuxserver/polipo
 ```
 
 **Parameters**
