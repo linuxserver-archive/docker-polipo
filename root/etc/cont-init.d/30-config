@@ -1,7 +1,10 @@
 #!/usr/bin/with-contenv bash
 
+# check for config file in /defaults, copy in if not found
 if [ ! -e "/defaults/polipo.conf" ]; then
 cp /usr/share/doc/polipo/examples/config.sample /defaults/polipo.conf
+
+# configure /defaults copy of config file
 sed -i -e 's/# proxyAddress = "0.0.0.0"/proxyAddress = "0.0.0.0"/' /defaults/polipo.conf
 sed -i '61,64d' /defaults/polipo.conf
 sed -i -e 's/# diskCacheRoot/diskCacheRoot/g' /defaults/polipo.conf
@@ -19,3 +22,12 @@ echo "" >>/defaults/polipo.conf
 echo "# Server Expire Time" >>/defaults/polipo.conf
 echo "serverExpireTime = 5d" >>/defaults/polipo.conf
 fi
+
+# check for config file in /config and copy in from /defaults if not found
+[[ ! -e /config/polipo.conf ]] && cp /defaults/polipo.conf /config/polipo.conf
+
+# check for cache folder and create if not found
+[[ ! -e /config/cache ]] && mkdir -p /config/cache
+
+# permissions
+chown abc:abc /config/*
