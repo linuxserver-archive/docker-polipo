@@ -1,25 +1,33 @@
-FROM lsiobase/xenial
-MAINTAINER smdion , sparklyballs
+FROM lsiobase/alpine
+MAINTAINER sparklyballs
 
-# set environment variables
-ARG DEBIAN_FRONTEND="noninteractive"
-
-# install packages
+# install build packages
 RUN \
- apt-get update && \
- apt-get install -y \
-	polipo && \
+ apk add --no-cache --virtual=build-dependencies \
+	g++ \
+	gcc \
+	git \
+	make \
+	texinfo && \
 
-# clean up
- apt-get clean && \
+# clone polipo source
+ git clone https://github.com/jech/polipo /tmp/polipo-source && \
+
+# configure and compile polipo
+ cd /tmp/polipo-source && \
+	make install && \
+
+# uninstall build packages
+ apk del --purge \
+	build-dependencies && \
+
+# cleanup
  rm -rfv \
-	/tmp/* \
-	/var/lib/apt/lists/* \
-	/var/tmp/*
+	/tmp/*
 
 # add local files
 COPY root/ /
 
-# ports and volumes
+# ports and volumes
 VOLUME /config
 EXPOSE 8123

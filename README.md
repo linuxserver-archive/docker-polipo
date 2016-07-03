@@ -20,7 +20,7 @@ docker create --name=polipo -v /etc/localtime:/etc/localtime:ro -v <path to data
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
 
-It is based on ubuntu xenial with s6 overlay, for shell access whilst the container is running do `docker exec -it polipo /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it polipo /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -41,5 +41,5 @@ Basic settings are pre-set by this container.  You can use the out of box experi
 
 ## Versions
 
-+ **03.07.16:** Rebase to xenial.
++ **03.07.16:** Rebase to alpine for smaller image size.
 + **06.11.15:** Initial Release

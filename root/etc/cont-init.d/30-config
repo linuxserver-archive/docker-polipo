@@ -1,33 +1,10 @@
 #!/usr/bin/with-contenv bash
 
-# check for config file in /defaults, copy in if not found
-if [ ! -e "/defaults/polipo.conf" ]; then
-cp /usr/share/doc/polipo/examples/config.sample /defaults/polipo.conf
-
-# configure /defaults copy of config file
-sed -i -e 's/# proxyAddress = "0.0.0.0"/proxyAddress = "0.0.0.0"/' /defaults/polipo.conf
-sed -i '61,64d' /defaults/polipo.conf
-sed -i -e 's/# diskCacheRoot/diskCacheRoot/g' /defaults/polipo.conf
-sed -i 's|'"~/.polipo-cache/"'|'"/config/cache/"'|' /defaults/polipo.conf
-sed -i -e 's/# chunkHighMark = 50331648/chunkHighMark = 50331648/' /defaults/polipo.conf
-sed -i -e 's/# objectHighMark = 16384/objectHighMark = 16384/' /defaults/polipo.conf
-sed -i -e 's/# disableIndexing = false/disableIndexing = false/' /defaults/polipo.conf
-sed -i -e 's/# disableServersList = false/disableServersList = false/' /defaults/polipo.conf
-sed -i -e 's/# censoredHeaders = from, accept-language/censoredHeaders = from, accept-language/' /defaults/polipo.conf
-sed -i -e 's/# censorReferer = maybe/censorReferer = maybe/' /defaults/polipo.conf
-sed -i '23d' /defaults/polipo.conf
-sed -i -e 's|# allowedClients = 127.0.0.1, 192.168.42.0/24|allowedClients = 127.0.0.1, 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16|' /defaults/polipo.conf
-sed -i -e 's/# proxyName = "polipo.example.org"/proxyName = "LSIO.Polipo"/' /defaults/polipo.conf
-echo "" >>/defaults/polipo.conf
-echo "# Server Expire Time" >>/defaults/polipo.conf
-echo "serverExpireTime = 5d" >>/defaults/polipo.conf
-fi
-
-# check for config file in /config and copy in from /defaults if not found
+# check for config file in /config and copy in from /defaults if not found
 [[ ! -e /config/polipo.conf ]] && cp /defaults/polipo.conf /config/polipo.conf
 
 # check for cache folder and create if not found
 [[ ! -e /config/cache ]] && mkdir -p /config/cache
 
-# permissions
+# permissions
 chown abc:abc /config/*
