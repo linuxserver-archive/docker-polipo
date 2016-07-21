@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# check for config file in /config and copy in from /defaults if not found
+[[ ! -e /config/polipo.conf ]] && cp /defaults/polipo.conf /config/polipo.conf
+
+# check for cache folder and create if not found
+[[ ! -e /config/cache ]] && mkdir -p /config/cache
+
+# permissions
+chown abc:abc /config/*

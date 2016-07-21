@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+
+while s6-setuidgid abc inotifywait -e modify /config/polipo.conf; do
+s6-svc -h /var/run/s6/services/polipo
+echo "File in Config Folder Changed, Restarted"
+done
