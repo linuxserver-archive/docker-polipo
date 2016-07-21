@@ -25,6 +25,11 @@ RUN \
  rm -rfv \
 	/tmp/*
 
+# install runtime packages
+RUN \
+ apk add --no-cache \
+	inotify-tools
+
 # add local files
 COPY root/ /
 
