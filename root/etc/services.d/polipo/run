@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+umask 000
+
+exec s6-setuidgid abc polipo -c /config/polipo.conf
