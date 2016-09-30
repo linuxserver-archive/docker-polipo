@@ -1,5 +1,5 @@
 #!/usr/bin/with-contenv bash
 
-umask 000
+umask 022
 
 exec s6-setuidgid abc polipo -c /config/polipo.conf

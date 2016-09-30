@@ -63,6 +63,7 @@ Basic settings are pre-set by this container.  You can use the out of box experi
 
 ## Versions
 
++ **30.09.16:** Fix umask
 + **11.09.16:** Move to lsiocommunity
 + **03.07.16:** Rebase to alpine for smaller image size.
 + **06.11.15:** Initial Release
