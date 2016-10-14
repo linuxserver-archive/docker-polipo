@@ -11,7 +11,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # lsiocommunity/polipo
-[![](https://images.microbadger.com/badges/image/lsiocommunity/polipo.svg)](http://microbadger.com/images/lsiocommunity/polipo "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/lsiocommunity/polipo.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/lsiocommunity/polipo.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/Community/lsiocommunity-polipo)](http://jenkins.linuxserver.io:8080/job/Dockers/job/Community/job/lsiocommunity-polipo/)
+[![](https://images.microbadger.com/badges/version/lsiocommunity/polipo.svg)](https://microbadger.com/images/lsiocommunity/polipo "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/lsiocommunity/polipo.svg)](http://microbadger.com/images/lsiocommunity/polipo "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/lsiocommunity/polipo.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/lsiocommunity/polipo.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/Community/lsiocommunity-polipo)](http://jenkins.linuxserver.io:8080/job/Dockers/job/Community/job/lsiocommunity-polipo/)
 [hub]: https://hub.docker.com/r/lsiocommunity/polipo/
 
 Polipo is a lightweight caching and forwarding web proxy server. It has a wide variety of uses, from aiding security by filtering traffic; to caching web, DNS and other computer network lookups for a group of people sharing network resources; to speeding up a web server by caching repeated requests.
@@ -61,8 +61,17 @@ Basic settings are pre-set by this container.  You can use the out of box experi
 
 * To monitor the logs of the container in realtime `docker logs -f polipo`.
 
+* container version number 
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' polipo`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' lsiocommunity/polipo`
+
 ## Versions
 
++ **14-10-16:** Add version layer information.
 + **30.09.16:** Fix umask
 + **11.09.16:** Move to lsiocommunity
 + **03.07.16:** Rebase to alpine for smaller image size.
