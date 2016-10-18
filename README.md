@@ -77,7 +77,7 @@ Basic settings are pre-set by this container.  You can use the out of box experi
 
 ## Versions
 
-+ **14-10-16:** Add version layer information.
++ **14.10.16:** Add version layer information.
 + **30.09.16:** Fix umask
 + **11.09.16:** Move to lsiocommunity
 + **03.07.16:** Rebase to alpine for smaller image size.
