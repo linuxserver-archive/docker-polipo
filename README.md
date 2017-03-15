@@ -2,6 +2,8 @@
 [forumurl]: https://forum.linuxserver.io
 [ircurl]: https://www.linuxserver.io/irc/
 [podcasturl]: https://www.linuxserver.io/podcast/
+[appurl]: https://github.com/jech/polipo
+[hub]: https://hub.docker.com/r/lsiocommunity/polipo/
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
@@ -12,12 +14,10 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 
 # lsiocommunity/polipo
 [![](https://images.microbadger.com/badges/version/lsiocommunity/polipo.svg)](https://microbadger.com/images/lsiocommunity/polipo "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/lsiocommunity/polipo.svg)](http://microbadger.com/images/lsiocommunity/polipo "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/lsiocommunity/polipo.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/lsiocommunity/polipo.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/Community/lsiocommunity-polipo)](http://jenkins.linuxserver.io:8080/job/Dockers/job/Community/job/lsiocommunity-polipo/)
-[hub]: https://hub.docker.com/r/lsiocommunity/polipo/
 
 Polipo is a lightweight caching and forwarding web proxy server. It has a wide variety of uses, from aiding security by filtering traffic; to caching web, DNS and other computer network lookups for a group of people sharing network resources; to speeding up a web server by caching repeated requests.
 
-[![polipo](http://www.leostickers.com/prod_imgs//Prod_2403.png)][polipourl]
-[polipourl]: https://github.com/jech/polipo
+[![polipo](http://www.leostickers.com/prod_imgs//Prod_2403.png)][appurl]
 
 ## Usage
 
