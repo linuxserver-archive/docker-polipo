@@ -1,39 +1,31 @@
-FROM lsiobase/alpine:3.6
-MAINTAINER sparklyballs
+FROM lsiobase/alpine:3.7
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="sparklyballs"
 
-# install build packages
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	g++ \
 	gcc \
 	git \
 	make \
 	texinfo && \
-
-# install runtime packages
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	inotify-tools && \
-
-# clone polipo source
+ echo "**** build polipo ****" && \
  git clone https://github.com/jech/polipo \
 	/tmp/polipo-source && \
-
-# configure and compile polipo
  cd /tmp/polipo-source && \
- make \
-	install && \
-
-# uninstall build packages
+ make install && \
+ echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
-
-# cleanup
- rm -rfv \
+ rm -rf \
 	/tmp/*
 
 # add local files
