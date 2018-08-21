@@ -77,6 +77,7 @@ Basic settings are pre-set by this container.  You can use the out of box experi
 
 ## Versions
 
++ **21.08.18:** Rebase to alpine 3.8.
 + **12.12.17:** Rebase to alpine 3.7.
 + **28.05.17:** Rebase to alpine 3.6.
 + **08.02.17:** Rebase to alpine 3.5.
